@@ -1,0 +1,24 @@
+k8s_masters:
+  hosts:
+    # Control nodes
+    control1.kube.local:
+      ansible_host: 192.168.53.160
+    # control2.kube.local:
+    #   nsible_host: 192.168.53.161
+    # control3.kube.local:
+    #   nsible_host: 192.168.53.162
+k8s_workers:
+  hosts:
+    # Worker nodes
+    worker1.kube.local:
+      ansible_host: 192.168.53.163
+    worker2.kube.local:
+      ansible_host: 192.168.53.164
+    # worker3.kube.local:
+    #   ansible_host: 192.168.53.165
+    # worker4.kube.local:
+    #   ansible_host: 192.168.53.166
+k8s_cluster:
+  children:
+    k8s_masters:
+    k8s_workers:
